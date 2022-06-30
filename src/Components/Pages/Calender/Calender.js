@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Calender = () => {
+
+import {DayPicker} from "react-day-picker";
+import 'react-day-picker/dist/style.css';
+
+
+
+const Calender = (
+    
+) => {
     return (
-        <div>
-            <h1 className='3xl'>This is Calender</h1>
-        </div>
+        
+        <div className='bg-sky-800 lg:flex lg:justify-center'>
+      
+      
+      <DayPicker
+       mode="single"
+       
+       />
+      
+      </div>
+    
+        
     );
 };
 
