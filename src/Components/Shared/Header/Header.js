@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../../images/logo/list.png'
 const Header = () => {
     return (
-        <div class="navbar bg-sky-800 font-bold">
+        <div class="navbar bg-sky-800 font-bold text-white">
   <div class="navbar-start ">
     <div class="dropdown ">
       <label tabindex="0" class="btn btn-ghost lg:hidden">

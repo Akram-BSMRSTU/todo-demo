@@ -1,12 +1,15 @@
 import React from 'react';
-import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
+import Calender from '../Calender/Calender';
+import Completed from '../Completed/Completed';
+import Todo from '../Todo/Todo';
+
 
 const Home = () => {
     return (
         <div>
-            <Header></Header>
-            <Footer></Footer>
+            <Todo></Todo>
+            <Completed></Completed>
+            <Calender></Calender>
         </div>
         
     );
