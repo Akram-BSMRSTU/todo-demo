@@ -1,11 +1,13 @@
 
 import './App.css';
-import Header from './Components/Shared/Header/Header';
+import Home from './Components/Pages/Home/Home';
+
 
 function App() {
   return (
-    
-    <Header></Header>
+    <div>
+      <Home></Home>
+    </div>
   );
 }
 
