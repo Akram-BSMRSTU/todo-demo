@@ -11,7 +11,7 @@ const Calender = (
 ) => {
     return (
         
-        <div className='bg-sky-800 lg:flex lg:justify-center'>
+        <div className='bg-rose-700 lg:flex lg:justify-center'>
       
       
       <DayPicker
