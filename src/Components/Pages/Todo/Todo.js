@@ -2,6 +2,7 @@ import React from 'react';
 import AddTask from './AddTask';
 
 import TaskList from './TaskList';
+import TodoList from './TodoList';
 
 
 const Todo = () => {
@@ -10,7 +11,7 @@ const Todo = () => {
             <AddTask></AddTask>
         
             <TaskList></TaskList>
-            
+            <TodoList></TodoList>
         </div>
     );
 };

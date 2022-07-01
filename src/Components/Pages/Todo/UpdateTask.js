@@ -20,7 +20,7 @@ Modal.setAppElement("#root");
 
 
 export default function UpdateModal({ id, setIsReload, isReload }) {
-  // let subtitle;
+  
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -41,7 +41,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
     const title = event.target.title.value;
     const textData = event.target.textData.value;
 
-    // console.log(title, textData);
+    
     fetch(`http://localhost:5000/task/${id}`, {
       method: "PUT",
       headers: {
