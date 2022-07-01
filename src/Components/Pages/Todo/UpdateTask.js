@@ -54,10 +54,10 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
   };
 
   return (
-    <div className="bg-sky-700">
-      <h2 className="text-center text-3xl text-white font-bold">Update Todo</h2><br />
-      <button onClick={openModal} className='py-5 flex justify-center mx-10 px-28'>
-        <FontAwesomeIcon className=' text-black text-3xl ' icon={faEdit}></FontAwesomeIcon><span className="text-xl text-white font-bold">Click button</span>
+    <div className="bg-rose-600 rounded-lg">
+      
+      <button onClick={openModal} className='py-5 text-success flex justify-center px-5'>
+        <FontAwesomeIcon className='  text-3xl ' icon={faEdit}></FontAwesomeIcon><span className="text-xl font-bold">Update todo</span>
       </button>
       <Modal
         isOpen={modalIsOpen}
