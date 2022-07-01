@@ -10,8 +10,8 @@ const Todo = () => {
         <div className='bg-rose-600'>
             <AddTask></AddTask>
         
-            <TaskList></TaskList>
-            <TodoList></TodoList>
+            
+            
         </div>
     );
 };

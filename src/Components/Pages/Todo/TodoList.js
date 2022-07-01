@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UpdateTask from "./UpdateTask"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './TodoList.css';
 
 const TodoList = () => {
     const [tasks, setTasks] = useState([]);
@@ -16,14 +17,14 @@ const TodoList = () => {
     }, [isReload]);
 
     const handleDelete = (id) => {
-        console.log(id);
+        
 
         fetch(` http://localhost:5000/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
                 toast.error("Todo removed!")
             });
@@ -34,7 +35,7 @@ const TodoList = () => {
         const title = data.title;
         const textData = data.textData;
 
-        console.log({ title, textData });
+        
 
         fetch(" http://localhost:5000/complete", {
             method: "POST",
@@ -46,7 +47,7 @@ const TodoList = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
                 toast.success("Added to completed")
             });
@@ -56,20 +57,20 @@ const TodoList = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
             });
 
     };
 
     return (
-        <div className='mid-content bg-warning'>
+        <div className='mid-content bg-warning border  text-black shadow rounded-lg'>
             <h1 className='font-bold text-black text-4xl text-center py-5'>Todo list</h1>
             {tasks.map((task) => (
                 <div className='grid grid-cols-2 border p-5 shadow rounded-lg m-2'>
                     <div className='flex w-full'>
                         <div className='mr-3'>
-                            <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio" />
+                            <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio focus:accent-rose-500" />
                         </div>
                         <div>
                             <p className='mr-2'><span className='font-bold'>{task?.title}-</span> {task?.textData}</p>

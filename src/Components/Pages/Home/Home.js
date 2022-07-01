@@ -1,15 +1,16 @@
 import React from 'react';
-import Calender from '../Calender/Calender';
-import Completed from '../Completed/Completed';
-import Todo from '../Todo/Todo';
+import About from '../About/About';
+
+import AddTask from '../Todo/AddTask';
+
+
 
 
 const Home = () => {
     return (
-        <div>
-            <Todo></Todo>
-            <Completed></Completed>
-            <Calender></Calender>
+        <div className='bg-rose-600'>
+            <About></About>
+            <AddTask></AddTask>
         </div>
         
     );

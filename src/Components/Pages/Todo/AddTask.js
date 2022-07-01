@@ -16,14 +16,14 @@ const AddTask = () => {
 
 
     const handleDelete = (id) => {
-        console.log(id);
+        
 
         fetch(` http://localhost:5000/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
                 toast.error("Removed todo!")
             });
@@ -34,7 +34,7 @@ const AddTask = () => {
         const title = data.title;
         const textData = data.description;
 
-        console.log({ title, textData });
+        
 
         fetch(" http://localhost:5000/task", {
             method: "POST",
@@ -46,7 +46,7 @@ const AddTask = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
                 document.getElementById("myForm").reset();
             });
@@ -54,8 +54,8 @@ const AddTask = () => {
     };
 
     return (
-        <div className='mid-content'>
-            <div className='lg:w-9/12 mx-auto '>
+        <div className='mid-content bg-rose-600'>
+            <div className='lg:w-9/12 mx-auto pb-5'>
                 <InputForm handlePost={handlePost} />
                 <div>
                     {tasks.map((task) => (

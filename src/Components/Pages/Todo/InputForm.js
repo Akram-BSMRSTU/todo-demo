@@ -8,7 +8,7 @@ const InputForm = ({handlePost}) => {
         <div className='px-10 lg:px-64 md:px-48 pt-5 mb-16 '>
             <div className="mid-content card flex-shrink-0 w-full shadow-xl ">
                 <div className="card-body bg-yellow-500 px-2">
-                    <h1 className='text-3xl text-center text-black font-bold'>What's the Plan for Today?</h1>
+                    <h1 className='text-3xl text-center text-black font-bold'>Add your todo's</h1>
                     <form onSubmit={handleSubmit(handlePost)} className='grid place-self-center' id="myForm">
 
                         <div className="form-control">
@@ -52,7 +52,7 @@ const InputForm = ({handlePost}) => {
                                 {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
                             </label>
                         </div>
-                        <button className='btn btn-success w-32'>Add Task</button>
+                        <button className='btn btn-success w-32'>Add Todo</button>
                     </form>
                 </div>
             </div>

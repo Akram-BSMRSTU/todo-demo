@@ -3,6 +3,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TodoList from '../Todo/TodoList'
 
 const Completed = () => {
     const [completeTasks, setCompleteTasks] = useState([]);
@@ -19,7 +20,7 @@ const Completed = () => {
         const title = data.title;
         const textData = data.textData;
 
-        console.log({ title, textData });
+        
 
         fetch(" http://localhost:5000/task", {
             method: "POST",
@@ -31,7 +32,7 @@ const Completed = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
             });
 
@@ -41,7 +42,7 @@ const Completed = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
                 toast.success("Opps, it is not completed yet!")
             });
@@ -49,7 +50,7 @@ const Completed = () => {
 
 
     return (
-        <div className='mid-content'>
+        <div className='mid-content bg-rose-600 pb-5 text-white'>
             <h1 className='font-bold text-4xl text-center py-5'>Completed Todo</h1>
             <div className='lg:w-9/12 mx-auto '>
                 {completeTasks.map((task, index) => (
@@ -69,9 +70,11 @@ const Completed = () => {
                                 <button className='btn btn-success btn-sm' onClick={() => handleDelete(task)}>Undone</button>
                             </div>
                         </div>
+                        
                         <ToastContainer />
                     </div>
                 ))}
+                <TodoList />
             </div>
         </div>
     );

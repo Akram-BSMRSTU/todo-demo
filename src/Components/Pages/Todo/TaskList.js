@@ -12,7 +12,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
         const title = data.title;
         const textData = data.textData;
 
-        // console.log({ title, textData });
+        
 
         fetch(" http://localhost:5000/complete", {
             method: "POST",
@@ -24,9 +24,9 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
-                toast.success("Task successfully completed.")
+                toast.success("Todo completed.")
             });
 
         fetch(` http://localhost:5000/task/${data._id}`, {
@@ -34,7 +34,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                
                 setIsReload(!isReload);
             });
 
@@ -42,7 +42,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
 
     return (
         <div>
-            <div className='grid grid-cols-2 border p-5 bg-sky-700 shadow rounded-lg m-2'>
+            <div className='grid grid-cols-2 border text-black p-5 bg-yellow-500 shadow rounded-lg '>
                 <div className='flex w-full'>
                     <div className='mr-3'>
                         <input onClick={() => handleComplete(task)} type="radio" name="radio-1" className="radio " />
@@ -54,7 +54,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 </div>
                 <div className='text-center'>
                     <div className='flex justify-center'>
-                        <button onClick={() => handleDelete(task._id)}><FontAwesomeIcon className='text-right text-warning mr-3 text-xl' icon={faTrash}></FontAwesomeIcon></button>
+                        <button onClick={() => handleDelete(task._id)}><FontAwesomeIcon className='text-right text-danger mr-3 text-xl' icon={faTrash}></FontAwesomeIcon></button>
                         <UpdateTask setIsReload={setIsReload} isReload={isReload} id={task?._id} />
                     </div>
                     <ToastContainer />

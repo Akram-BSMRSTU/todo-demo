@@ -4,6 +4,7 @@ import Calender from "./Components/Pages/Calender/Calender";
 import Completed from "./Components/Pages/Completed/Completed";
 import Home from './Components/Pages/Home/Home';
 import NotFound from "./Components/Pages/NotFound/NotFound";
+import AddTask from "./Components/Pages/Todo/AddTask";
 import Todo from "./Components/Pages/Todo/Todo";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
@@ -19,6 +20,7 @@ function App() {
         <Route  path="/todo" element={<Todo/>} />
         <Route  path="/completed" element={<Completed/>} />
         <Route  path="/calender" element={<Calender/>} />
+        <Route  path="/add-todo" element={<AddTask/>} />
         <Route  path="*" element={<NotFound/>} />
         
       </Routes>
