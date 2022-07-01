@@ -12,7 +12,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
         const title = data.title;
         const textData = data.textData;
 
-        console.log({ title, textData });
+        // console.log({ title, textData });
 
         fetch(" http://localhost:5000/complete", {
             method: "POST",

@@ -1,9 +1,78 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Completed = () => {
+    const [completeTasks, setCompleteTasks] = useState([]);
+    const [isReload, setIsReload] = useState(false);
+
+    useEffect(() => {
+        fetch(" http://localhost:5000/complete-task")
+            .then((res) => res.json())
+            .then((data) => setCompleteTasks(data));
+    }, [isReload]);
+
+
+    const handleDelete = (data) => {
+        const title = data.title;
+        const textData = data.textData;
+
+        console.log({ title, textData });
+
+        fetch(" http://localhost:5000/task", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+
+            body: JSON.stringify({ title, textData }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setIsReload(!isReload);
+            });
+
+
+        fetch(` http://localhost:5000/complete/${data._id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setIsReload(!isReload);
+                toast.success("Opps, it is not completed yet!")
+            });
+    };
+
+
     return (
-        <div>
-            <h1 className='3xl'>This is Completed</h1>
+        <div className='mid-content'>
+            <h1 className='font-bold text-4xl text-center py-5'>Completed Todo</h1>
+            <div className='lg:w-9/12 mx-auto '>
+                {completeTasks.map((task, index) => (
+                    <div className='grid grid-cols-2 border p-5 shadow rounded-lg m-2 '>
+                        <div className='flex w-full'>
+                            <div className='mr-3'>
+                                <p>{++index}. </p>
+                            </div>
+                            <div className=' flex'>
+                                <p className='mr-2 font-bold'>{task?.title}-</p>
+                                <p>{task?.textData}</p>
+                            </div>
+
+                        </div>
+                        <div className='text-end'>
+                            <div className='flex justify-end'>
+                                <button className='btn btn-success btn-sm' onClick={() => handleDelete(task)}>Undone</button>
+                            </div>
+                        </div>
+                        <ToastContainer />
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
