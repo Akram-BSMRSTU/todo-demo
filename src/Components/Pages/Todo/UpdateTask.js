@@ -28,8 +28,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
   }
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = "#f00";
+    
   }
 
   function closeModal() {
@@ -55,9 +54,10 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
   };
 
   return (
-    <div>
-      <button onClick={openModal}>
-        <FontAwesomeIcon className='text-right text-xl ml-2' icon={faEdit}></FontAwesomeIcon>
+    <div className="bg-sky-700">
+      <h2 className="text-center text-3xl text-white font-bold">Update Todo</h2><br />
+      <button onClick={openModal} className='py-5 flex justify-center mx-10 px-28'>
+        <FontAwesomeIcon className=' text-black text-3xl ' icon={faEdit}></FontAwesomeIcon><span className="text-xl text-white font-bold">Click button</span>
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -68,15 +68,15 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
         <button onClick={closeModal} className="btn btn-sm btn-warning">
           close
         </button>
-        <div>Please update your Task!</div>
-        <div className=" mt-3 bg-secondary">
+        <div>Update todo!</div>
+        <div className=" mt-3">
           <form className="container " onSubmit={handleUpdate}>
             <div className="input-group mb-3 mt-5 ">
               <input
                 type="text"
-                className="form-control border p-3 rounded-xl"
+                className="form-control text-white border bg-rose-700 p-3 rounded-xl"
                 required
-                placeholder="Add a Task"
+                placeholder="Add title"
                 aria-label="With input"
                 name="title">
               </input>
@@ -84,15 +84,15 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
 
             <div className="input-group ">
               <input
-                className="form-control border p-3 rounded-xl"
+                className="form-control bg-sky-700 text-white border p-3 rounded-xl"
                 aria-label="With textarea"
-                placeholder="Update your plan.."
+                placeholder="Update description"
                 name="textData"
                 required
               ></input>
             </div>
             <div className="mt-4">
-              <input type="submit" value="submit" className="btn btn-primary" />
+              <input type="submit" value="submit" className="btn btn-warning " />
             </div>
           </form>
         </div>
