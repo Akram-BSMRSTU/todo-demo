@@ -5,13 +5,13 @@ const InputForm = ({handlePost}) => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     return (
-        <div className='flex justify-center  items-center pt-5 mb-16 m-2'>
+        <div className='px-10 lg:px-64 md:px-48 pt-5 mb-16 '>
             <div className="mid-content card flex-shrink-0 w-full shadow-xl ">
                 <div className="card-body bg-yellow-500 px-2">
                     <h1 className='text-3xl text-center text-black font-bold'>What's the Plan for Today?</h1>
-                    <form onSubmit={handleSubmit(handlePost)} id="myForm">
+                    <form onSubmit={handleSubmit(handlePost)} className='grid place-self-center' id="myForm">
 
-                        <div className="form-control ">
+                        <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-xl text-black font-bold">Title:</span>
                             </label>

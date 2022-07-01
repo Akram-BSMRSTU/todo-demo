@@ -1,13 +1,14 @@
 import React from 'react';
-import InputForm from './InputForm';
+import AddTask from './AddTask';
+
 import TaskList from './TaskList';
 
 
 const Todo = () => {
     return (
-        <div className='bg-white'>
-            <h1 className='3xl'>This is todo</h1>
-            <InputForm></InputForm>
+        <div className='bg-rose-600'>
+            <AddTask></AddTask>
+        
             <TaskList></TaskList>
             
         </div>

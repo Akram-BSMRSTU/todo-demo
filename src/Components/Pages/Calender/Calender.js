@@ -11,11 +11,12 @@ const Calender = (
 ) => {
     return (
         
-        <div className='bg-rose-700 lg:flex lg:justify-center'>
-      
+        <div className='bg-rose-700 grid justify-center'>
+      <h2 className='text-warning text-2xl font-bold text-center my-5'>Don't miss a date!</h2>
       
       <DayPicker
        mode="single"
+       className='text-success'
        
        />
       
