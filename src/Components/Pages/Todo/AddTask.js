@@ -9,7 +9,7 @@ const AddTask = () => {
     const [isReload, setIsReload] = useState(false);
 
     useEffect(() => {
-        fetch(" http://localhost:5000/tasks")
+        fetch(" https://bloc-crown-86209.herokuapp.com/tasks")
             .then((res) => res.json())
             .then((data) => setTasks(data));
     }, [isReload]);
@@ -18,7 +18,7 @@ const AddTask = () => {
     const handleDelete = (id) => {
         
 
-        fetch(` http://localhost:5000/task/${id}`, {
+        fetch(` https://bloc-crown-86209.herokuapp.com/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -36,7 +36,7 @@ const AddTask = () => {
 
         
 
-        fetch(" http://localhost:5000/task", {
+        fetch(" https://bloc-crown-86209.herokuapp.com/task", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

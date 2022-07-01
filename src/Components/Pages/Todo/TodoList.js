@@ -11,7 +11,7 @@ const TodoList = () => {
     const [isReload, setIsReload] = useState(false);
 
     useEffect(() => {
-        fetch(" http://localhost:5000/tasks")
+        fetch(" https://bloc-crown-86209.herokuapp.com/tasks")
             .then((res) => res.json())
             .then((data) => setTasks(data));
     }, [isReload]);
@@ -19,7 +19,7 @@ const TodoList = () => {
     const handleDelete = (id) => {
         
 
-        fetch(` http://localhost:5000/task/${id}`, {
+        fetch(` https://bloc-crown-86209.herokuapp.com/task/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -37,7 +37,7 @@ const TodoList = () => {
 
         
 
-        fetch(" http://localhost:5000/complete", {
+        fetch(" https://bloc-crown-86209.herokuapp.com/complete", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -52,7 +52,7 @@ const TodoList = () => {
                 toast.success("Added to completed")
             });
 
-        fetch(` http://localhost:5000/task/${data._id}`, {
+        fetch(` https://bloc-crown-86209.herokuapp.com/task/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

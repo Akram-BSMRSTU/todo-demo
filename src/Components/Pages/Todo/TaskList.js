@@ -14,7 +14,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
 
         
 
-        fetch(" http://localhost:5000/complete", {
+        fetch(" https://bloc-crown-86209.herokuapp.com/complete", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -29,7 +29,7 @@ const TaskList = ({ task, handleDelete, isReload, setIsReload }) => {
                 toast.success("Todo completed.")
             });
 
-        fetch(` http://localhost:5000/task/${data._id}`, {
+        fetch(` https://bloc-crown-86209.herokuapp.com/task/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

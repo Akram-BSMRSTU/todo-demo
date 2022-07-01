@@ -10,7 +10,7 @@ const Completed = () => {
     const [isReload, setIsReload] = useState(false);
 
     useEffect(() => {
-        fetch(" http://localhost:5000/complete-task")
+        fetch(" https://bloc-crown-86209.herokuapp.com/complete-task")
             .then((res) => res.json())
             .then((data) => setCompleteTasks(data));
     }, [isReload]);
@@ -22,7 +22,7 @@ const Completed = () => {
 
         
 
-        fetch(" http://localhost:5000/task", {
+        fetch(" https://bloc-crown-86209.herokuapp.com/task", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -37,7 +37,7 @@ const Completed = () => {
             });
 
 
-        fetch(` http://localhost:5000/complete/${data._id}`, {
+        fetch(` https://bloc-crown-86209.herokuapp.com/complete/${data._id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

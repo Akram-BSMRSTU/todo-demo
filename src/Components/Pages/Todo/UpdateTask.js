@@ -42,7 +42,7 @@ export default function UpdateModal({ id, setIsReload, isReload }) {
     const textData = event.target.textData.value;
 
     
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(`https://bloc-crown-86209.herokuapp.com/task/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

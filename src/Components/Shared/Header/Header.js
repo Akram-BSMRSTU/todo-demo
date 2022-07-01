@@ -37,7 +37,7 @@ const Header = () => {
     </ul>
   </div>
   <div class="navbar-end">
-    <a href='/add-todo' class="btn">Add todo</a>
+    <a href='/add-todo' class="btn btn-success">Add todo</a>
   </div>
 </div>
     );
