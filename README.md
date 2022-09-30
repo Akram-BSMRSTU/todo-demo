@@ -2,6 +2,8 @@
 
 ## It is a MERN Stack application. 
 
+### Live site: http://todo-demo-gray.vercel.app/
+
 ### Funconality
 - User can add todo with title and description
 - User can edit and update todo
